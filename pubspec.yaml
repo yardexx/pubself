@@ -11,6 +11,8 @@ dependencies:
   equatable: ^2.0.5
   json_annotation: ^4.7.0
   meta: ^1.8.0
+  package_storage:
+    path: packages/package_storage
 
 dev_dependencies:
   build_runner: ^2.2.1
