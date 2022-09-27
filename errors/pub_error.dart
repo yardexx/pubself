@@ -14,6 +14,12 @@ part 'pub_error.g.dart';
 class PubError extends Equatable {
   const PubError(this.error);
 
+  factory PubError.withData({
+    required String code,
+    required String message,
+  }) =>
+      PubError(ResponseError(code: code, message: message));
+
   final ResponseError error;
 
   static PubError fromJson(Map<String, dynamic> json) =>
@@ -21,8 +27,6 @@ class PubError extends Equatable {
 
   Map<String, dynamic> toJson() => _$PubErrorToJson(this);
 
-
   @override
   List<Object?> get props => [error];
-  
 }
