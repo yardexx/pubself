@@ -11,6 +11,18 @@
 
 Project pubself is package for hosting custom pub server.
 
+## Development state
+State: **Freezed**
+
+Frog is great framework but it has its limitation. Currently, package is not *actively* developed since some crucial functionality is not available at moment.
+- 🛠 Support for [multipart](https://github.com/VeryGoodOpenSource/dart_frog/issues/296) (required by pub specification)
+- 🔐 Support for [authentication](https://github.com/VeryGoodOpenSource/dart_frog/issues/37) (required by pub specification)
+
+## Contribution 🔨
+Feel free to create issue or PR - more people know more. 
+
+Before contributing, please check if your propose complies with [pub repository specification](https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md).
+
 ## Features 📃
 - 🎯 Written in pure Dart
 - 🐸 Build on top of [dart_frog](https://pub.dev/packages/dart_frog)
@@ -18,6 +30,7 @@ Project pubself is package for hosting custom pub server.
 - 💙 Open source
 
 ## Planned features 🗺
+- 💾 Support for Local Storage
 - 💾 Support for GCS (Google Cloud Storage) and AWS S3 (Amazon Web Service Simple Storage Service)
 - 💻 CLI for easier setup and package management
 - 🧱 Mason support
