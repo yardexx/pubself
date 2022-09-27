@@ -19,7 +19,7 @@ Frog is great framework but it has its limitation. Currently, package is not *ac
 - 🔐 Support for [authentication](https://github.com/VeryGoodOpenSource/dart_frog/issues/37) (required by pub specification)
 
 ## Contribution 🔨
-Feel free to create issue or PR - more people know more. 
+Feel free to create issue or PR - more people know more. *Proposals for package name are welcomed 😅*
 
 Before contributing, please check if your propose complies with [pub repository specification](https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md).
 
