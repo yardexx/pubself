@@ -15,10 +15,20 @@ Version _$VersionFromJson(Map<String, dynamic> json) => Version(
       json['published'] as String,
     );
 
-Map<String, dynamic> _$VersionToJson(Version instance) => <String, dynamic>{
-      'version': instance.version,
-      'pubspec': const PubspecConverter().toJson(instance.pubspec),
-      'archive_url': instance.archiveUrl,
-      'archive_sha256': instance.archiveSha256,
-      'published': instance.published,
-    };
+Map<String, dynamic> _$VersionToJson(Version instance) {
+  final val = <String, dynamic>{
+    'version': instance.version,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('pubspec', const PubspecConverter().toJson(instance.pubspec));
+  val['archive_url'] = instance.archiveUrl;
+  val['archive_sha256'] = instance.archiveSha256;
+  val['published'] = instance.published;
+  return val;
+}

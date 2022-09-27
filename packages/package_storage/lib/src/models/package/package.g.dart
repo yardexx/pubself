@@ -8,6 +8,7 @@ part of 'package.dart';
 
 Package _$PackageFromJson(Map<String, dynamic> json) => Package(
       json['name'] as String,
+      Version.fromJson(json['latest'] as Map<String, dynamic>),
       json['isDiscontinued'] as bool?,
       json['replacedBy'] as String?,
       (json['versions'] as List<dynamic>)
@@ -15,9 +16,20 @@ Package _$PackageFromJson(Map<String, dynamic> json) => Package(
           .toList(),
     );
 
-Map<String, dynamic> _$PackageToJson(Package instance) => <String, dynamic>{
-      'name': instance.name,
-      'isDiscontinued': instance.isDiscontinued,
-      'replacedBy': instance.replacedBy,
-      'versions': instance.versions,
-    };
+Map<String, dynamic> _$PackageToJson(Package instance) {
+  final val = <String, dynamic>{
+    'name': instance.name,
+    'latest': instance.latest,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('isDiscontinued', instance.isDiscontinued);
+  writeNotNull('replacedBy', instance.replacedBy);
+  val['versions'] = instance.versions;
+  return val;
+}

@@ -10,16 +10,18 @@ import 'package:package_storage/src/models/models.dart';
 part 'package.g.dart';
 
 @immutable
-@JsonSerializable()
+@JsonSerializable(includeIfNull: false)
 class Package extends Equatable {
   const Package(
     this.name,
+    this.latest,
     this.isDiscontinued,
     this.replacedBy,
     this.versions,
   );
 
   final String name;
+  final Version latest;
   final bool? isDiscontinued;
   final String? replacedBy;
   final List<Version> versions;

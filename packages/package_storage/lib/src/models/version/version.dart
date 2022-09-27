@@ -10,7 +10,7 @@ import 'package:package_storage/src/models/version/pubspec_converter.dart';
 part 'version.g.dart';
 
 @immutable
-@JsonSerializable()
+@JsonSerializable(includeIfNull: false)
 class Version extends Equatable {
   const Version(
     this.version,
